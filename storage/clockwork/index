@@ -1,0 +1,9 @@
+1652397938-7221-2100526100,1652397938.0447,GET,/?category=ut-modi-cupiditate-est-maiores-ex,"App\Http\Controllers\PostController@index",200,2055.9508800507,request
+1652397945-3708-1170433467,1652397945.036,GET,/?category=ut-modi-cupiditate-est-maiores-ex,"App\Http\Controllers\PostController@index",200,1112.6630306244,request
+1652398235-7441-564377348,1652398235.2507,GET,/,"App\Http\Controllers\PostController@index",200,1450.4427909851,request
+1652398241-7034-372450713,1652398241.3621,GET,/?category=optio-eius-at-dolor-quas-nesciunt-enim,"App\Http\Controllers\PostController@index",200,1246.9358444214,request
+1652398252-1135-694465393,1652398251.7412,GET,/?category=omnis-occaecati-voluptatem-quas-sit-consequatur,"App\Http\Controllers\PostController@index",200,1258.829832077,request
+1652398311-0366-1470510682,1652398310.7236,GET,/?category=omnis-occaecati-voluptatem-quas-sit-consequatur,"App\Http\Controllers\PostController@index",200,1021.9190120697,request
+1652398315-7848-1948921028,1652398315.487,GET,/?category=omnis-occaecati-voluptatem-quas-sit-consequatur,"App\Http\Controllers\PostController@index",200,945.42980194092,request
+1652398325-4864-562116212,1652398325.19,GET,/?search=dfgfg,"App\Http\Controllers\PostController@index",200,795.76110839844,request
+1652398335-3619-1351787246,1652398335.0532,GET,/?search=i,"App\Http\Controllers\PostController@index",200,977.06389427185,request

@@ -1,22 +1,35 @@
+
 <x-layout>
-  @foreach ($posts as $post )
+    @include('_post-header')
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
 
-  <article>
-      <h1>
+    @if ($posts->count())
 
-          <a href="/posts/{{ $post->slug }}">{!! $post->title !!}</a>
+        <x-post-featured-card :post="$posts[0]" />
 
-      </h1>
-      <p>  <a href="categories/{{ $post->category->slug }}">
-        {{ $post->category->name }}
-      </a>
-      </p>
-      <div>
-          {{ $post->expcert }}
+            @if ($posts->count()> 1)
 
-      </div>
+                <div class="lg:grid lg:grid-cols-6">
 
-  </article>
-  @endforeach
+        `           @foreach($posts->skip(1) as $post)
+
+                         <x-post-card
+                             :post="$post"
+                             class="{{ $loop->iteration < 3 ? 'col-span-2' : 'col-span-2' }}"
+                         />
+
+                    @endforeach
+
+                </div>
+            @endif
+        @else
+               <p style="text-align: center">No Post Yet. Please check back latter!</p>
+    @endif
+
+
+
+    </main>
+
+
+
 </x-layout>
-<a href=""></a>

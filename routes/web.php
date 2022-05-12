@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
@@ -18,36 +19,16 @@ use Illuminate\Support\Facades\DB;
  |
  */
 
-Route::get('/', function () {
+Route::get('/', [\App\Http\Controllers\PostController::class, 'index'])->name('home');
+Route::get('posts/{post:slug}', [\App\Http\Controllers\PostController::class, 'show']);
 
-        return view('posts',
-         ['posts' => Post::latest()->with('category')->get()
-       ]);
+
+
+    Route::get('authors/{author:username}', function (User $author) {
+
+
+        return view('posts', [
+           'posts' => $author->post
+        ]);
 
     });
-
-/*
- / Posts/post -MEANS- get it exactly
- / Posts/{post} -MEANS- search for post from the string given
- /
- */
-Route::get('categories/{category:slug}', function (Category $category) {
-
-    return view('posts', [
-        'posts' => $category->posts
-    ]);
-
-});
-Route::get('posts/{post}', function (Post $post) {
-
-    return view('post', [
-        'post' => $post
-    ]);
-
-});
-
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class , 'index'])->name('home');
