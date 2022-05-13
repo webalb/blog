@@ -17,7 +17,7 @@ class Post extends Model
     {
       return $this->belongsTo(Category::class);
     }
-    
+
     public function author()
     {
       return $this->belongsTo(User::class, 'user_id');
@@ -34,6 +34,12 @@ class Post extends Model
         $query->when($filters['category'] ?? false, fn ($query, $category) =>
             $query
                 ->whereHas('category', fn($query) => $query->where('slug', $category))
+
+        );
+
+        $query->when($filters['author'] ?? false, fn ($query, $author) =>
+            $query
+                ->whereHas('author', fn($query) => $query->where('username', $author))
 
         );
     }
