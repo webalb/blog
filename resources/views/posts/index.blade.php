@@ -22,6 +22,7 @@
 
                 </div>
             @endif
+            {{ $posts->links() }}
         @else
                <p style="text-align: center">No Post Yet. Please check back latter!</p>
     @endif
