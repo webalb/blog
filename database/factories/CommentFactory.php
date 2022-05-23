@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\{ Comment, Post } ;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +15,15 @@ class CommentFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    protected $model = Comment::class;
+
     public function definition()
     {
         return [
-            //
+            'post_id' => Post::factory(),
+            'user_id' => Post::factory(),
+            'body' => $this->faker->paragraph()
         ];
     }
 }
